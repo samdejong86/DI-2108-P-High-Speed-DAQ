@@ -153,7 +153,7 @@ string DI_2108_P::sendMessage(string message){
     
   }else {
     cout<<"Write Error"<<endl;
-    return libusb_strerror((libusb_error)r);  //if there was an error, return the error
+    return "Error!\n";
   } 
   std::string sName(reinterpret_cast<char*>(recieved));  //convert recieved message into a string
   return sName;
@@ -289,7 +289,6 @@ vector<double> DI_2108_P::getReadings(){
     
   }
 
-  if(r!=0) cout<<libusb_strerror((libusb_error)r)<<endl; //if there was a problem, print an error message
   
   isRecording=false;  //recording is finished
 
